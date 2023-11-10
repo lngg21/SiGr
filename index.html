@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Bancário</title>
+    <link rel="shortcut icon" type="imagex/png" href="png.ico">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <h2>Interface de Sistema Bancário com Visualização de Dados em Gráficos</h2>
+    </nav>
+
+    <br> <br>
+    <br> <br>
+    <div class="container">
+        <input type="file" id="csvFile" accept=".csv">
+        <br> <br>
+        <br> <br>
+        <div class="serie">
+            <label for="series">Selecionar Série:</label>
+            <select id="series"></select>
+        </div>
+        <br> <br>
+        <br> <br>
+        <div class="tipo">
+            <label for="chartType">Tipo de Gráfico:</label>
+            <select id="chartType">
+                <option value="bar">Barras</option>
+                <option value="line">Linhas</option>
+                <option value="pie">Pizza</option>
+            </select>
+        </div>
+        <br> <br>
+        <br> <br>
+        <div class="opcao">
+            <label for="options">Opções:</label>
+            <br> <br>
+            <input type="checkbox" id="beginAtZero"> <label for="beginAtZero">Começar Eixo Y do Zero</label><br>
+            <input type="checkbox" id="smoothCurve"> <label for="smoothCurve">Suavizar Curvas</label><br>
+            <input type="checkbox" id="stacked"> <label for="stacked">Empilhar Séries</label><br>
+            <input type="checkbox" id="fillArea"> <label for="fillArea">Preencher Área Sob Curvas</label><br>
+        </div>
+        <br> <br>
+        <canvas id="chartCanvas"></canvas>
+        <div id="dataPreview"></div>
+        <br> <br>
+        <br> <br>
+        <div class="button-container">
+            <button onclick="exportarGrafico()">Exportar Gráfico</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <div>
+        <div class = "footer">
+            Arthur Vinicius
+        </div>
+    </div>
+</body>
+
+</html>
